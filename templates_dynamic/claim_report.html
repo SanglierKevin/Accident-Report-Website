@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anthony,Kevin,Arthur">
+    <title>Signaler un accident</title>
+
+    <link rel="stylesheet" href="../style/upnav.css">
+    <link rel="stylesheet" href="../style/claim_report.css">
+    <link rel="stylesheet" href="../style/dark-version.css" id="theme">
+
+    <!--affichage de l'icone dans l'onglet du navigateur-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script type="text/javascript" src="../scripts/color.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- entrez votre clé Api ici "https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=YOURAPIKEY"-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places&key=AIzaSyDCpQLa4M4XC_tshz13tInhib1Ee42NBL4"></script>
+    <script src = ../scripts/autocomplete.js></script>
+    
+</head>
+<body onload="loadbackground(),loadback(),loadmap()">
+    <div class = "switchmode flex-box">
+        <button onclick="changebackground(),changeback()">Passer en mode <span id="mode-type">Sombre</span></button>
+    </div>
+    <!--barre de navigation -->
+    <div id="upnav"></div>
+    <!--contient les checkbox,text area et l'upload d'une photo-->
+            <form action="/add" method="POST" class = "claim_report_page flex-box" enctype="multipart/form-data">
+                <h1 class="title_report">Signaler un accident</h1>
+                    <ol>
+                        <li class="subtitle">Catégorie d'incident
+                            <!--checkbox-->
+                            <div class="claim_report_list espace">
+                                <input type="checkbox" id="incident1" name="incident1" value="Voirie">
+                                <label for="incident1"> Voirie</label><br>
+                                <input type="checkbox" id="incident2" name="incident2" value="Routier">
+                                <label for="incident2"> Propreté publique</label><br>
+                                <input type="checkbox" id="incident3" name="incident3" value="encombrants">
+                                <label for="incident3"> Plantation</label><br>
+                                <input type="checkbox" id="incident4" name="incident4" value="encombrants">
+                                <label for="incident4"> Signalisation</label><br>
+                                <input type="checkbox" id="incident5" name="incident5" value="encombrants">
+                                <label for="incident5"> Eclairage</label><br>
+                                <input type="checkbox" id="incident6" name="incident6" value="encombrants">
+                                <label for="incident6"> Mobilier urbain</label><br>
+                                <input type="checkbox" id="incident7" name="incident7" value="encombrants">
+                                <label for="incident7"> Monument</label><br>
+                                <input type="checkbox" id="incident8" name="incident8" value="encombrants">
+                                <label for="incident8"> Véhicule</label><br>
+                            </div>
+                        </li>
+                        <!--textarea-->
+                        <li class="subtitle">Description<br>
+                            <textarea class = "espace" name="description" placeholder= "Description exhaustive de l'incident" rows="10" cols="60"  minlength="1" required></textarea>
+                        </li>
+                        <!--autofill google maps-->
+                        <li class="subtitle form-group ">Adresse<br>
+                            <input type="text" class="form-control" name="adresse" id="search_input" placeholder="Type address..." />
+                            <input type="hidden" id="loc_lat" name = "latitude"/>
+                            <input type="hidden" id="loc_long" name = "longitude"/>
+                        </li>
+                        <!--ajout de photo-->
+                        <li class="subtitle">
+                            <label for="pictures" class="label" id="button">Importer une photo:</label>
+                            <input type="file"
+                            id="pictures" name="pictures"
+                            accept="image/png, image/jpeg" ><br>
+                        </li><br>
+                        <input class= "link-report upperbox submit espace" type="submit">
+                        <div id="footnote"></div>
+                    </ol>
+            </form>
+
+        <img src="../image/background-w.jpeg" id="bl" class="left" style = "-webkit-transform: scaleX(-1);transform: scaleX(-1);">
+        <img src="../image/background-w.jpeg" id="br"  class="right">
+
+</body>
+</html>

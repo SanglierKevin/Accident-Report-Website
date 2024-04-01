@@ -1,0 +1,131 @@
+.claim_report_page{
+    position: relative;
+    margin-bottom: 20px;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    left: 25%;
+    align-items: center;
+}
+
+.form-control{
+    width: 90%;
+    padding: 8px 15px;
+    margin-top: 20px;
+}
+
+.title_report{
+    font-size: 40px;
+}
+
+.left{
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    left: 0;
+    top: 0;
+}
+
+.right{
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    z-index: -1;
+    right: 0;
+    top: 0;
+}
+
+.subtitle{
+    font-size: 25px;
+    width: 100%;
+}
+
+textarea{
+    resize: none;
+    width: 90%;
+}
+
+.claim_report_list{
+    font-size: 18px;
+}
+
+.submit{
+    position: relative;
+    font-size: 15px ;
+    width: 70%;
+    height: 25px;
+    border-radius: 25px;
+    margin-left: 12%;
+}
+
+ol li{
+    margin-top: 40px;
+}
+
+.espace{
+    margin-top: 20px;
+}
+
+.footnote{
+    width: 90%;
+    margin-top: 20px;
+}
+
+.answer{
+    padding: 5px;
+    width: 90%;
+}
+
+#map{
+    height: 400px;
+    width: 80%; 
+    margin: 20px 5%;
+}
+  
+
+@media only screen and (max-width: 700px) {  
+    .title_report{
+        font-size: 30px;
+        text-align: center;
+    }
+    
+    .subtitle{
+        font-size: 15px;
+        width: 80%;
+    }
+
+    textarea{
+        width: 80%;
+    }
+
+    .claim_report_page {
+        width: 90%;
+        left: 0%;
+        height: 110%;
+    }
+
+    .left,.right{
+        display: none;
+        color: rgb(250, 171, 24)
+    }
+
+    .submit{
+        width: 80%;
+        margin: auto;
+    }
+
+    .footnote{
+        margin-left: 0%;
+        width: 100%;
+        position: relative;
+        left: -2.5%;
+    }
+
+    #map {
+        position: relative;
+        width: 100%; 
+        margin: 20px 0%;
+        left: -2.5%;
+    }
+}

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anthony,Kevin,Arthur">
+    <link rel="stylesheet" href="../style/upnav.css">
+    <link rel="stylesheet" href="../style/display-body.css">
+    <link rel="stylesheet" href="../style/display-table.css">
+    <link rel="stylesheet" href="../style/dark-version.css" id="theme">
+
+    <!--affichage de l'icone dans l'onglet du navigateur-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>Affichage des incidents</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/color.js"></script>
+    <script type="text/javascript" src="../scripts/Rotate.js"></script>
+
+</head>
+<body onload="loadmode(),handleSort()" id="body">
+
+    <div class = "switchmode flex-box">
+        <button onclick="changemode()">Passer en mode <span id="mode-type">Sombre</span></button>
+    </div>
+    <!--barre de navigation supérieure-->
+    <div id="upnav"></div>
+    <!--page principale affichant le contenu-->
+    <div class="content flex-box " id="content">
+        
+        <!--affichage supérieur de la page (ajout d'incident et date actuelle)-->
+        <div class="report-date-container flex-box">
+            <!--affichage du bouton d'ajout de sinistre-->
+            <a class="flex-box upperbox link-report" href="claim_report">
+                <img src="../image/plus-black.png" id="plus" width="20px"> Ajouter un incident
+            </a>
+
+            <!--affichage de la date du jour-->
+            <div class="flex-box upperbox boxday">Jour actuel : {{date}}</div>
+        </div>
+        <!--affichage des différents incidents-->
+        <div class="claims flex-box">
+            <input type="hidden" id="cat" value={{cat}}>
+            <input type="hidden" id="sort" value={{sort}}>
+            <table>
+                <tr class="head">
+                    <th>Description</th>
+                    <th>Adresse</th>
+                    <th>Utilisateur <br><a href="changesort?cat=utilisateur"><img src="../image/right-arrow-solid-b.png" id="utilisateur" style="height: 15px;width:15px;transform:rotate(0deg)"></a></th>
+                    <th>Date<br><a href="changesort?cat=date"><img src="../image/right-arrow-solid-b.png" id="date" style="height: 15px;width:15px"></a></th>
+
+                </tr>
+                {{#list}}
+                    <tr>
+                        <td style="text-align: center;max-width: 28vw;"><a href="/report?id={{_id}}" class="link-incident">{{description}}</a></td>
+                        <td style="text-align: center;">{{adresse}}</td>
+                        <td style="text-align: center;">{{utilisateur}}</td>
+                        <td style="text-align: center;">{{date}}</td>
+                    </tr>
+                {{/list}}
+            </table>
+
+            <!--affichage du nombre de pages-->
+            <div class="pagenumber">
+                <a href ="/previousnum" id="sortorder"><img src="../image/left-arrow-b.png" id="previous" style="height: 15px;width:15px"></a>
+                {{#numlist}}
+                <a href={{ref}} class = "flex-box {{main}}">{{number}}</a>
+                {{/numlist}}
+                <a href = "/nextnum"><img src="../image/right-arrow-b.png" id="next" style="height: 15px;width:15px"></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="footnote" style="margin-left: 5%"></div>
+</body>
+</html>

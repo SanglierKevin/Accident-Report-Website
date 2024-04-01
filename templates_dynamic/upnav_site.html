@@ -1,0 +1,21 @@
+<div class="upnav flex-box">
+    <!--contient le code relatif au logo et au titre du site-->
+    
+    <a href="clearsession" class="logo-container flex-box">
+        <img src=../image/buildings.png class="logobuilding">  <!--logo du site-->
+        <div class="title">NamurSur</div> <!--titre du site-->
+    </a>
+    <div class = "right-upnav-container flex-box">
+        <!--contient le code relatif à la barre de recherche-->
+        <form class="searchbar-container flex-box" action="search" method="GET">
+            <input type="text" id="searchbar" name= "searchbar" placeholder="Rechercher...">  <!--barre de recherche-->
+            <input type="image" src= '../image/search.png' class="loupe" id = "loupe" alt="submit" onmouseover="changeimage('loupe','../image/search-black.png')" onmouseout="changeimage('loupe','../image/search.png')">
+        </form>
+    
+        <!--contient le code relatif au nom d'utilisateur-->
+        <a href="log.html" class="username-container flex-box" onmouseover="changeimage('userlogo','../image/user-black.png')" onmouseout="changeimage('userlogo','../image/user.png')">
+            <img src='../image/user.png' class="userlogo" id="userlogo">  <!--logo d'utilisateur-->
+            <div id="userid" class="userid">{{username}}</div>
+        </a>
+    </div>
+</div>

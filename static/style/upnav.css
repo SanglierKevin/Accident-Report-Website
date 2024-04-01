@@ -1,0 +1,191 @@
+/* code css relatif au style de la barre de navigation supérieure et de son contenu */
+
+.switchmode{
+    background-color: rgb(33, 32, 48);
+    color: white;
+    justify-content: center;
+}
+
+/* style des boutons des différentes pages */
+button{
+    background-color: rgb(117, 144, 202);
+    border: 2px solid rgb(33, 32, 48);
+    border-radius: 10px;
+    color: white;
+}
+
+/* corps des pages html étant le même sur toutes les pages */
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.flex-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* barre de navigation supérieure */
+.upnav{
+    flex-direction: row;
+    background-color: rgb(33, 32, 48);
+    flex: 2 0 100px;
+    padding: 20px;
+    border-radius: 0 0 15px 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* contenant pour la barre de recherche et l'utilisateur afin que ceux-ci passent à la ligne en redimensionnant l'écran */
+.right-upnav-container{
+    flex-direction: row;
+    justify-content: end;
+}
+
+/* logo building du site ainsi que le titre du site */
+.logo-container{
+    flex-direction: row;
+    flex: 4 2 30%;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* logo building du site */
+.logobuilding{
+    width: 70px;
+    height: 70px;
+}
+
+/* titre du site */
+.title{
+    font-size: xx-large;
+    color: azure;
+}
+
+/* ensemble reprenant la barre de recherche et la loupe */
+.searchbar-container{
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    flex-wrap: nowrap;
+}
+
+/* image de la loupe */
+.loupe{
+    width: 50px;
+    margin-left: 10px;
+    border-radius: 20px;
+}
+
+.loupe:hover{
+    background-color: aliceblue;
+}
+
+/* boutton submit */
+.button{
+    height: 27px;
+    border-radius: 5px;
+}
+
+/* contient le nom d'utilisateur et le logo d'utilisateur */
+.username-container{
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+    text-decoration: none;
+    border-radius: 20px;
+    min-width: 150px;
+    height: auto;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+/* échange les couleurs quand on passe la souris dessus */
+.username-container:hover{
+    background-color: aliceblue;
+    color: black;
+}
+
+/* notes de bas de page */
+.footnote{
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex: 1 0 25px;
+    width: 90%;
+    border-top: 3px solid rgb(63, 89, 133);
+    align-self: center;
+    padding: 10px;
+}
+
+.footnote div{
+    margin-right: 20px;
+}
+
+/* contient le logo d'utilisateur */
+.userlogo{
+    width: 50px;
+}
+
+@media only screen and (max-width: 700px) {
+    /* barre de navigation */
+    .upnav{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    body{
+        font-size: 12px;
+    }
+
+    /* contenant pour la barre de recherche et l'utilisateur afin que ceux-ci passent à la ligne en redimensionnant l'écran */
+    .right-upnav-container{
+        flex: 13 4 0;
+        justify-content: center;
+    }
+
+    /* logo du site ainsi que le titre du site */
+    .logo-container{
+        flex: 1 0.5 50px;
+        justify-content: center;
+    }
+
+    /* logo building du site -> réduction de taille par rapport à l'écran */
+    .logobuilding{
+        width: 50px;
+        height: 50px;
+    }
+
+    /* nom du site -> réduction de taille par rapport à l'écran */
+    .title{
+        font-size: large;
+        color: azure;
+    }
+    
+    /* contenant pour la barre de recherche et le logo */
+    .searchbar-container{
+        flex: 17 1 100px;
+        justify-content: center;
+        width: 100%;
+    }
+
+    /* contient l'image de la loupe */
+    .loupe{
+        width: 30px;
+        border-radius: 10px;
+    }
+
+    /* contient le nom d'utilisateur et le logo d'utilisateur */
+    .username-container{
+        padding: 10px;
+        flex-direction: row;
+    }
+
+    /* image du logo d'utilisateur */
+    .userlogo{
+        width: 30px;
+    }
+}

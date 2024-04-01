@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anthony,Kevin,Arthur">
+    <title>Présentation de l'incident</title>
+
+    <link rel="stylesheet" href="../style/upnav.css">
+    <link rel="stylesheet" href="../style/claim_report.css">
+    <link rel="stylesheet" href="../style/dark-version.css" id="theme">
+
+    <!--affichage de l'icone dans l'onglet du navigateur-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script type="text/javascript" src="../scripts/color.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!--entrez votre clé Api ici "https://maps.googleapis.com/maps/api/js?key=YOURKEYHERE&callback=initMap&libraries=&v=weekly"-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCpQLa4M4XC_tshz13tInhib1Ee42NBL4&callback=initMap&libraries=&v=weekly" async></script>
+    <script src="../scripts/hideImage.js"></script>
+    <script src="../scripts/maps.js"></script>
+    
+</head>
+<body onload="loadbackground(),loadback(),hideImage()">
+    <div class = "switchmode flex-box">
+        <button onclick="changebackground(),changeback()">Passer en mode <span id="mode-type">Sombre</span></button>
+    </div>
+    <!--barre de navigation-->
+    <div id="upnav"></div>
+    <!--contient les checkbox,text area et l'upload d'une photo-->
+    <ol class = "claim_report_page flex-box">
+        <h1 class="title_report">Caractéristiques de l'incident</h1>
+        <li class="subtitle">Catégorie d'incident
+            <!--checkbox-->
+            <div class="claim_report_list espace">
+                {{#list}}
+                <input type="checkbox" id="incident1" name="incident1" value="Voirie" {{value}} disabled>
+                <label for="incident1"> {{label}}</label><br>
+                {{/list}}
+            </div>
+        </li>
+        <li class="subtitle">Utilisateur<br>
+            <div class = "answer flex-box">{{utilisateur}}</div>
+        </li>
+        <li class="subtitle">Description<br>
+            <div class = "answer flex-box">{{description}}</div>
+        </li>
+        <li class="subtitle">Adresse<br>
+            <div class = "answer flex-box">{{adresse}}</div>
+            
+                <div id="map"></div>
+                <input type="hidden" value="{{long}}" id="long">
+                <input type="hidden" value="{{lat}}" id="lat">
+        </li>
+
+        <!--affichage de la photo -->
+        <li class="subtitle" id="image">Photo<br>
+            <img src=".{{urlImage}}" width="60%" style="margin-left: 16%;" id="pictures">
+        </li><br>
+        <div id="footnote"></div>
+    </ol>
+        <img src="../image/background-w.jpeg" id="bl" class="left" style = "-webkit-transform: scaleX(-1);transform: scaleX(-1);">
+        <img src="../image/background-w.jpeg" id="br"  class="right">
+</body>
+</html>

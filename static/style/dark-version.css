@@ -1,0 +1,122 @@
+/* code css relatif au style du tableau et des numéros de page s'affichant sur la page html */
+
+/* -----couleurs de la navigation supérieure----- */
+.switchmode{
+    background-color: rgb(32, 34, 37);
+    color: white;
+}
+
+.switchmode button:hover{
+    background-color: rgb(54, 57, 63);
+}
+
+/* barre de navigation supérieure */
+.upnav{
+    background-color: rgb(32, 34, 37);
+}
+
+/* notes de bas de page */
+.footnote{
+    border-top: 3px solid rgb(210, 215, 224);
+}
+
+/* -----couleurs de la page display.html----- */
+
+/* 2 cadres se trouvant au dessus de la page */
+.upperbox{
+    background-color: rgb(47, 49, 54);
+    border: 4px rgb(32, 34, 37) solid;
+}
+
+.link-report:visited{
+    color: white;
+}
+
+/* changement de couleur en mettant sa souris sur le lien */
+.link-report:hover{
+    background-color: rgb(41, 42, 46);
+}
+
+/* -----couleurs du tableau----- */
+
+/* tableau */
+table{
+    border: 4px rgb(33, 32, 48) solid;
+    box-shadow: -5px -5px  rgb(65, 70, 80) ;
+    color: white;
+}
+
+/* modifier têtes du tableau */
+.head th{
+    background-color: rgb(41, 43, 47);
+}
+
+/* modifier lignes du tableau */
+th,td{
+    border-bottom: 4px solid rgb(32, 34, 37);
+}
+
+/* échanger les couleurs pour les éléments pairs et impairs */
+tr:nth-child(even){
+    background-color: rgb(54, 57, 63);
+}
+
+tr:nth-child(odd){
+    background-color: rgb(47, 49, 54);
+}  
+
+/* numéro de page du tableau */
+.pagenumber a,.pagenumber a:visited{
+    color: azure;
+}
+
+/* numéro de page actuel */
+.true{
+    background-color: rgb(50, 208, 113);
+}
+
+/* lien menant vers la page d'affichage des caractéristiques d'un incident */
+.link-incident,.link-incident:visited{
+    color: rgb(101, 224, 101);
+}
+
+/* changement de couleur sur toute la page */
+body{
+    background-color: rgb(54, 57, 63);
+    color: azure;
+}
+
+/* -----couleurs des pages claim_report.html et report.html----- */
+
+/* bouton pour soumettre */
+.submit{
+    background-color: rgb(47, 49, 54);
+    border: 2px rgb(32, 34, 37) solid;
+    color: white;
+}
+
+.submit:hover{
+    background-color: rgb(41, 42, 46);
+}
+
+/* fond de la page de signalement d'incidents */
+.claim_report_page {
+    background-color: rgb(54, 57, 63);
+}
+
+/* zones de texte de la page de signalement d'incidents */
+textarea{
+    background-color: rgb(54, 57, 63);
+    color: white;
+    border: 2px white solid;
+}
+
+/* texte générique s'affichant dans les zones de texte de la page de signalement d'incidents */
+textarea::placeholder{
+    color: white;
+}
+
+/* cadre des caractéristiques de la page report */
+.answer{
+    border: 1px solid white;
+}

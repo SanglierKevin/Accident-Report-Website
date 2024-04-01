@@ -1,0 +1,58 @@
+/* code css relatif au corps de la page html à l'exception du tableau et des numéros de page (pour ceux-ci, allez voir display-table.css) */
+
+/* contenu principal de la page web */
+.content{
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* contient les deux cadres supérieurs de la page */
+.report-date-container{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2 cadres se trouvant au dessus de la page */
+.upperbox{
+    font-size: large;
+    width: 220px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+}
+
+/* lien vers la page d'ajout d'incident */
+.link-report{
+    text-decoration: none;
+}
+
+/* cadre contenant le jour */
+.boxday{
+    margin-left: auto;
+}
+
+@media only screen and (max-width: 700px) {
+    body{
+      margin-right: 10px;
+    }
+
+    .content{
+        width: auto;
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    /* bouton menant à l'ajout d'incident */
+    .link-report{
+        width : 90%;
+    }
+
+    /* cadre du jour */
+    .boxday{
+        margin-top: 5px;
+        width : 90%;
+        margin-left: 0px;
+    }
+}

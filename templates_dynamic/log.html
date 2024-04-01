@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anthony,Kevin,Arthur">
+    <link rel="stylesheet" href="../style/upnav.css">
+    <link rel="stylesheet" href="../style/log.css">
+    <link rel="stylesheet" href="../style/dark-version.css" id="theme">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>Page de connexion</title>
+
+    <!--affichage de l'icone dans l'onglet du navigateur-->
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/color.js"></script>
+    <script src="../scripts/log.js" type="text/javascript"></script>
+
+</head>
+<body onload="loadbackground(), loadError()">
+
+  <div class = "switchmode flex-box">
+    <button onclick="changebackground()" style="margin-top: 0px;">Passer en mode <span id="mode-type">Sombre</span></button>
+  </div>
+  <!--barre de navigation supérieure-->
+  <div id="upnav"></div>
+<div class="flex-box border">
+<input type="hidden" value="{{error}}" id="error">
+    
+<!--formulaire de connexion-->
+<form action="conn.html" method="post" class="box">
+   <h1>Se connecter</h1>
+
+    <label for="pseudo"><b>Pseudonyme</b></label>
+    <input type="text" id="username" name="username" class="first" required>
+
+    <label for="connmdp"><b>Mot de passe</b><input type="checkbox" onclick="AfficherMDPConn()"><sup>Voir</sup></label>
+    <input type="password" id="connmdp" name="connmdp" required><br>
+    
+    <button type="submit" class = "link-report upperbox">Connexion</button>
+</form>
+
+<!--formulaire d'inscription-->
+<form action="insc.html" method="post" class="box">
+   <h1>S'inscrire</h1>
+
+    <label for="pseudo"><b>Pseudonyme</b></label>
+    <input type="text" id="username" name="username" class="second" required>
+
+    <label for="inscmdp"><b>Mot de passe</b><input type="checkbox" onclick="AfficherMDPInsc()"><sup>Voir</sup></label>
+    <input type="password" id="inscmdp" name="inscmdp" onchange="checkmdp()" required>
+
+    <label for="confmdp"><b>Répétez le mot de passe</b></label>
+    <input type="password" id="confmdp" name="confmdp" onchange="checkmdp()" required>
+    <button type="submit" class = "link-report upperbox">Inscription</button>
+</form>
+</div>
+
+<div id="footnote" style="margin-left : 5%"></div>
+</body>
+</html>

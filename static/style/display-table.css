@@ -1,0 +1,70 @@
+/* code css relatif au style du tableau et des numéros de page s'affichant sur la page html */
+
+/* contenant pour le tableau et le nombre de pages */
+.claims{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.link-incident{
+    text-decoration: none;
+}
+
+/* Tableau */
+table{
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    min-width: 0;
+}
+
+/* Modifier lignes tableau */
+th,td{
+    padding: 10px;
+}
+
+/* contenant pour les numéros de page du tableau */
+.pagenumber{
+    margin-top: 10px;
+    align-items: center;
+}
+
+/* numéros de page du tableau */
+.pagenumber a{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    width: 25px;
+    height: 20px;
+}
+
+.true{
+    border-radius: 25%;
+    font-weight: bolder;
+}
+@media only screen and (max-width: 700px) {
+    /* tableau et numéros de page */
+    .claims{
+        margin-top: 10px;
+    }
+
+    table{
+        width: 100%;
+    }
+
+    body{
+        font-size: 15px;
+    }
+
+    th,td{
+        padding: 5px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    body{
+        font-size: 11px;
+    }
+}
