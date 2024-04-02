@@ -220,3 +220,8 @@ Pour cette page, nous avons utilisé les fichiers suivants:
 - le dossier [static/favicon_io](https://github.com/Aperence/LINFO1212_P/blob/master/static/favicon_io) qui contient les images de l'icône ![icone](https://github.com/Aperence/LINFO1212_P/blob/master/static/favicon_io/favicon-16x16.png) dans l'onglet de la fenêtre
 
 Cette page permet de montrer en détails les caractéristiques de l'incident (utilisateur, type d'incident, photo de l'incident, par qui il a été signalé ainsi que l'adresse de celui-ci).
+
+---
+Feel free to make recommendations and put a star on the project's Github.
+
+You can also Buy Me a Coffee here : https://www.buymeacoffee.com/sanglierkev
